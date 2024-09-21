@@ -1,0 +1,165 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*definindo variaveis*/
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hoover-main-links: #272727;
+
+    /**/
+    --fonte-principal: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    /* height: 100vh; O VH significa que queremos que o body seja 100% do viewport */
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria); /*texto*/
+   }
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu_link{
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao {
+    display: flex;
+    padding: 8% 15%;
+    align-items: center;
+    justify-content: space-between; 
+    gap:82px; 
+}
+
+.apresentacao__conteudo {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 40px; /*controle de espaçamento entre os items*/
+}
+
+.apresentacao__conteudo__titulo{
+    font-family: var(--fonte-principal);
+    /* font-weight: 400; */
+    font-style: normal;
+    font-size: 2.25rem;
+}
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+.apresentacao__conteudo__paragrafo{
+    font-family: var(--fonte-secundaria);
+    font-style: normal;
+    font-size: 1.5rem;
+    font-optical-sizing: auto;
+}
+
+.apresentacao__conteudo__paragrafo:hover {
+    cursor: text;
+}
+
+/*Ao passar o mouse no elemento pai, o hover é aplicado no elemento filho*/
+.apresentacao__conteudo__paragrafo:hover .apresentacao__conteudo__paragrafo_highlighted {
+    font-weight: 600;
+    color: var(--cor-terciaria);
+}
+
+/*usando flexbox dentro de flexbox*/
+.apresentacao__links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px; /*adiciona espaço entre os itens*/
+    
+}
+
+.apresentacao__links_subtitulo {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao {
+    /* Add Flax Box */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+
+    color: var(--cor-secundaria);
+    width: 50%;
+    padding:21.5px 0;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600; /*semibold*/
+}
+
+.apresentacao__links__link:hover{
+    background-color: var(--cor-hoover-main-links) ;
+}
+
+/* .apresentacao__image{
+    flex-shrink: 0;
+} */
+
+.apresentacao__image {
+    max-width: 50%;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 10px;
+}
+
+.rodape {
+    padding: 24px;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media(max-width:1200px){
+
+    .cabecalho{
+        padding: 10%;
+    }
+
+    .cabecalho__menu{
+       justify-content: center;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo{
+        width: auto;
+    }
+}
